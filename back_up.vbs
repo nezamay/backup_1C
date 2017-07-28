@@ -980,11 +980,15 @@ Sub UploadBases
 	Next
 End Sub
 '------------------------------
-Prepare	'подготовка общих переменных
-LoadConfig 'загрузка конфигурационного файла
-FindCore1C 'поиск ядра 1С
-ConnectComConnector1C8 'подключение компоненты COM-коннектора к 1С 8
-ConnectFtpComponent 'подключение компоненты для работы с ftp (при необходимости)
-UploadBases
+Sub Run
+    Prepare	'подготовка общих переменных
+    LoadConfig 'загрузка конфигурационного файла
+    FindCore1C 'поиск ядра 1С
+    ConnectComConnector1C8 'подключение компоненты COM-коннектора к 1С 8
+    ConnectFtpComponent 'подключение компоненты для работы с ftp (при необходимости)
+    UploadBases
 
-SendError "--------------------------------------"
+    SendError "--------------------------------------"
+End Sub
+'------------------------------
+Run
