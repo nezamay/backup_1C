@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				elementFormDefault="qualified">
+	<xsd:annotation><xsd:documentation>
+		XML Schema настроек скрипта архивирования баз 1С
+		Last Modifed 2016-03-01
+	</xsd:documentation></xsd:annotation>
+
+	<xsd:element name="root">
+		<xsd:annotation><xsd:documentation>
+			This is the root element of the XML file.
+		</xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="parameters" type="tParameters" minOccurs="0"/>
+				<xsd:element name="bases" type="tBases"/>
+				<xsd:element name="ftpConnections" type="tFtpConnections" minOccurs="0"/>
+				<xsd:element name="restructuringPatterns" type="tRestructuringPatterns" minOccurs="0"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name='tParameters'>
+		<xsd:annotation><xsd:documentation>
+			Настройки скрипта, не привязанные к базам и серверам
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="version" type="tVersion">
+				<xsd:annotation><xsd:documentation>
+    				Версия используемого ядра - 82 или 83
+	    		</xsd:documentation></xsd:annotation>
+	    	</xsd:element>
+			<xsd:element name="debug" type="tOnOff" minOccurs="0">
+				<xsd:annotation><xsd:documentation>
+					Добавлять ли в лог детальные записи отладки
+	    		</xsd:documentation></xsd:annotation>
+	    	</xsd:element>
+			<xsd:element name="tempUploadFolder" type="tLocalPathRestriction" minOccurs="0">
+				<xsd:annotation><xsd:documentation>
+					Временная директория, куда будут делаться выгрузки (в том числе перед переброской на фтп-сервер)
+					Перекрывается параметром baseUploadFolder настроек выгрузки базы 1С
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ftpComponentPathDLL" type="tLocalPathRestriction" minOccurs="0">
+				<xsd:annotation><xsd:documentation>
+					Путь к компоненте ChilkatFTP.dll, если она размещена в отличном от \ftp\ChilkatFTP.dll месте
+					!Не помещайте ее в директорию %SYSTEMROOT%\System32 на х64 машинах, скрипт не будет видеть ее, ложите в %SYSTEMROOT%\SysWOW64
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name='tBases'>
+		<xsd:annotation><xsd:documentation>
+			Узел для настроек выгрузки баз 1С
+		</xsd:documentation></xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="base" type="tBase"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='tFtpConnections'>
+		<xsd:annotation><xsd:documentation>
+			Узел для настроек подключений к фтп-серверам
+		</xsd:documentation></xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="ftpConnection" type="tFtpConnection"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='tRestructuringPatterns'>
+		<xsd:annotation>
+			<xsd:documentation>
+				Узел для настроек шаблонов реструктуризации папок с выгрузками
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="restructuringPattern" type="tRestructuringPattern" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='tBase'>
+		<xsd:annotation><xsd:documentation>
+			Настройки выгрузки базы	1С
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="connection" type="tBaseConnection"/>
+			<xsd:element name="fileNamePrefixUpload" type="xsd:string">
+				<xsd:annotation><xsd:documentation>
+					Префикс файла выгрузки. Имя файла будет дополнятся другими параметрами (датой)
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element name="baseUploadFolder" type="tLocalPathRestriction" minOccurs="0">
+				<xsd:annotation><xsd:documentation>
+					Папка для выгрузки базы данных.
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="ftpUpload" type="tFtpSettingsUpload" minOccurs="0"/>
+			<xsd:element name="restructuring" type="tRestructuringLink" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="activity" type="tOnOff"/>
+		<xsd:attribute name="comment" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name='tFtpConnection'>
+		<xsd:annotation><xsd:documentation>
+			Настройки подключения к фтп-серверу
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="serverUri" type="xsd:string"/>
+			<xsd:element name="serverPort" type="xsd:integer"/>
+			<xsd:element name="login" type="xsd:string"/>
+			<xsd:element name="password" type="xsd:string"/>
+			<xsd:element name="passiveMode" type="tOnOff" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="idName" type="xsd:ID" use="required"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="tOnOff">
+		<xsd:annotation><xsd:documentation>
+			Активность, 0/1
+		</xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="tBaseConnection">
+		<xsd:annotation><xsd:documentation>
+			Узел с данными по подключению к базе
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="type" type="tBaseConnectionType"/>
+			<xsd:element name="login" type="xsd:string"/>
+			<xsd:element name="password" type="xsd:string"/>
+		</xsd:all>
+	</xsd:complexType>
+  
+	<xsd:complexType name="tBaseConnectionType">
+		<xsd:annotation><xsd:documentation>
+			Выбор типа подключения базы 1С: файловый или клиент-серверный
+		</xsd:documentation></xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="clientServer" type="tBaseConnectionTypeClientServer"/>
+			<xsd:element name="file" type="tBaseConnectionTypeFile"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="tBaseConnectionTypeClientServer">
+		<xsd:annotation><xsd:documentation>
+			Настройки подключения клиент-серверной версии базы 1С
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="serverName" type="xsd:string">
+				<xsd:annotation><xsd:documentation>
+					Имя сервера баз 1С
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element name="baseName" type="xsd:string">
+				<xsd:annotation><xsd:documentation>
+					Имя базы 1С
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tBaseConnectionTypeFile">
+		<xsd:annotation><xsd:documentation>
+			Настройки подключения файловой версии базы 1С
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="baseLocation" type="tLocalPathRestriction">
+				<xsd:annotation><xsd:documentation>
+					Расположение базы 1С
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name="tFtpSettingsUpload">
+		<xsd:annotation><xsd:documentation>
+			Блок для переброски базы на фтп-сервер
+		</xsd:documentation></xsd:annotation>
+		<xsd:all>
+			<xsd:element name="folder" type="tFtpFolderRestriction" minOccurs="0">
+				<xsd:annotation><xsd:documentation>
+					Папка на фтп-сервере
+				</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+		<xsd:attribute name="activity" type="tOnOff">
+			<xsd:annotation><xsd:documentation>
+				Включена ли переброска на фтп-сервер. При отсутствии атрибута - включена.
+			</xsd:documentation></xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="name" type="xsd:IDREF" use="required">
+			<xsd:annotation><xsd:documentation>
+				Ссылка на фтп-подключение
+			</xsd:documentation></xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="deleteAfterUpload" type="tOnOff">
+			<xsd:annotation><xsd:documentation>
+				Удалять ли выгрузку из временой директории после переброски на фтп-сервер
+			</xsd:documentation></xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:simpleType name="tFtpFolderRestriction">
+		<xsd:annotation><xsd:documentation>
+			Тип для описания корректности путей к фтп-папке (в таком формате работает компонента ChilkatFtp)
+			Путь должен начинаться с / и в конце не должно быть /,
+			Для корневой директории возвращается /
+			Добавлено ограничение на русские символы, чтобы не было коллизий с кодировками
+		</xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(/+[a-zA-Z0-9_-]+)+|/"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="tVersion">
+		<xsd:annotation><xsd:documentation>
+			Номер версии ядра 
+		</xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="8[2-3]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="tLocalPathRestriction">
+		<xsd:annotation><xsd:documentation>
+				Тип для описания корректности путей к локальным папкам/файлам
+				Поскольку в имени пути могут быть любые символы, то проверяем только букву диска (англ. буква) и отсутствие \ в конце,
+				а также отсутствие слеша /
+		</xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z]:\\[^/]*[^\\]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="tRestructuringPattern">
+		<xsd:annotation><xsd:documentation>
+			Шаблон для описания методики подчистки папки с выгрузками			
+		</xsd:documentation></xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="element">
+				<xsd:complexType>
+					<xsd:all>
+						<xsd:element name="depthInMonth" type="xsd:integer">
+							<xsd:annotation><xsd:documentation>
+								Глубина в месяцах от текущей даты (текущий месяц включительно), внутри которой рассчитываются файлы, которые оставлять
+								0 - весь диапазон хранения файлов
+							</xsd:documentation></xsd:annotation>
+						</xsd:element>
+						<xsd:element name="rangeInDay" type="xsd:integer">
+							<xsd:annotation><xsd:documentation>
+								Диапазон в днях, внутри которого в расчетном месяце должен оставаться один файл. Расчет начинается с конца месяца.
+								0 - все файлы оставлять на заданной глубине расчета
+							</xsd:documentation></xsd:annotation>
+						</xsd:element>
+					</xsd:all>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+    <xsd:attribute name="idName" type="xsd:ID" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="tRestructuringLink">
+		<xsd:attribute name="patternName" type="xsd:IDREF" use="required">
+			<xsd:annotation><xsd:documentation>
+					Ссылка на шаблон реструктуризации
+			</xsd:documentation></xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>
