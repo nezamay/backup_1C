@@ -1,0 +1,1 @@
+c:\windows\SysWOW64\wscript.exe //x ..\back_up.vbs ..\config.xml

@@ -1,0 +1,1 @@
+c:\windows\System32\wscript.exe ..\back_up.vbs

@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>ChilkatFtp ActiveX Reference (Visual Basic)</TITLE>
+<meta name="Keywords" content="Software, Component, ActiveX, .NET, Library, Class, SDK, Developer, Code, Source, .NET, C++, VB.NET, C#, Visual Basic, ASP, ASP.NET, Email, Zip, Encryption, XML, Microsoft">
+<meta name="Description" content="PAGE_TITLE">
+
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+</HEAD>
+<BODY link=#000066 bgColor=#ffffff>
+<div align=center> 
+  <table width="740" border="0" cellspacing="0" cellpadding="4">
+  <tr valign="top"> 
+  <td> 
+    <h1 align="center"><font face="Verdana" size="+2" color="#333333"><i>ChilkatFtp ActiveX Reference (Visual Basic)</i></font></h1>
+    <h1 align="center"><b><i><font face="Verdana" size="+3" color="#CC6600">ChilkatFtp</font></i></b></h1>
+    <p align="center"><font face="Microsoft Sans Serif" size="3">Free and Unsupported File Transfer Protocol (FTP) Component.<br></font></p>
+
+    <table width="740" border="0" cellspacing="0" cellpadding="6">
+ <tr> 
+ <td width="152" valign="top"> 
+ <p align="center"><font face="MS Sans Serif" size="2"><a href="http://www.chilkatsoft.com/refdoc">Reference Index</a></font><br>
+ <font face="MS Sans Serif" size="2"><a href="http://www.chilkatsoft.com">Chilkat 
+ Home</a></font><br>
+ <font face="MS Sans Serif" size="2"><a href="http://www.example-code.com">Example 
+ Programs</a></font> <br>
+ 
+ </p>
+ <table width="150" border="0" cellspacing="0" cellpadding="4">
+ <tr bgcolor="#333333"> 
+   <td> 
+   <div align="center"><font face="Microsoft Sans Serif" color="#FFFFFF" size="2"><b>Properties 
+   </b></font></div>
+   </td>
+ </tr>
+ </table>
+ <p align="center"><font face="MS Sans Serif" size="2"><a href="#prop000">Hostname</a><br><a href="#prop001">IsConnected</a><br><a href="#prop002">LastErrorHtml</a><br><a href="#prop003">LastErrorText</a><br><a href="#prop004">LastErrorXml</a><br><a href="#prop005">ListPattern</a><br><a href="#prop006">NumFilesAndDirs</a><br><a href="#prop007">Passive</a><br><a href="#prop008">Password</a><br><a href="#prop009">Port</a><br><a href="#prop010">Proxy</a><br><a href="#prop011">UseIEProxy</a><br><a href="#prop012">Username</a><br><a href="#prop013">Version</a><br></font></p>
+ <table width="150" border="0" cellspacing="0" cellpadding="4">
+ <tr bgcolor="#333333"> 
+   <td> 
+   <div align="center"><font face="Microsoft Sans Serif" color="#FFFFFF" size="2"><b>Methods 
+   </b></font></div>
+   </td>
+ </tr>
+ </table>
+ <p align="center"><font face="MS Sans Serif" size="2"><a href="#method000">ChangeRemoteDir</a><br><a href="#method001">Connect</a><br><a href="#method002">CreateRemoteDir</a><br><a href="#method003">DeleteMatching</a><br><a href="#method004">DeleteRemoteFile</a><br><a href="#method005">Disconnect</a><br><a href="#method006">GetCreateTime</a><br><a href="#method007">GetCurrentDirListing</a><br><a href="#method008">GetCurrentRemoteDir</a><br><a href="#method009">GetFile</a><br><a href="#method010">GetFilename</a><br><a href="#method011">GetIsDirectory</a><br><a href="#method012">GetLastAccessTime</a><br><a href="#method013">GetLastModifiedTime</a><br><a href="#method014">GetRemoteFileBinaryData</a><br><a href="#method015">GetRemoteFileTextData</a><br><a href="#method016">GetSize</a><br><a href="#method017">MGetFiles</a><br><a href="#method018">MPutFiles</a><br><a href="#method019">PutFile</a><br><a href="#method020">PutFileFromBinaryData</a><br><a href="#method021">PutFileFromTextData</a><br><a href="#method022">RemoveRemoteDir</a><br><a href="#method023">RenameRemoteFile</a><br><a href="#method024">SaveLastError</a><br></font></p>
+    <br>
+  
+ </td>
+ <td width="544" valign="top"> 
+ <table width="100%" border="0" cellspacing="0" cellpadding="1">
+ <tr bgcolor="#CC6600" valign="top"> 
+   <td> 
+   <table width="100%" border="0" cellspacing="0" cellpadding="4">
+   <tr bgcolor="#FFFFFF" valign="top"> 
+  <td> 
+  <p><font face="Verdana" size="+2" color="#333333"><i><b>Properties</b></i></font></p>
+  <p><a name="prop000"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Hostname'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Hostname As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">The FTP server hostname.</font></p>
+</blockquote>
+<p><a name="prop001"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='IsConnected'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>IsConnected As Long (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns true if currently connected and logged into an FTP server, otherwise returns false.</font></p>
+</blockquote>
+<p><a name="prop002"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='LastErrorHtml'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>LastErrorHtml As String (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Error information in HTML format for the last method called.</font></p>
+</blockquote>
+<p><a name="prop003"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='LastErrorText'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>LastErrorText As String (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Error information in plain-text format for the last method called.</font></p>
+</blockquote>
+<p><a name="prop004"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='LastErrorXml'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>LastErrorXml As String (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Error information in XML format for the last method called.</font></p>
+</blockquote>
+<p><a name="prop005"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='ListPattern'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>ListPattern As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">A wildcard pattern, defaulting to "*" that determines the files and directories included in the following properties and methods: NumFilesAndDirs, GetCreateTime, GetFilename, GetIsDirectory, GetLastAccessTime, GetModifiedTime, GetSize.</font></p>
+</blockquote>
+<p><a name="prop006"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='NumFilesAndDirs'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>NumFilesAndDirs As Long (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">The number of files and sub-directories in the current remote directory that match the ListPattern. (The ListPattern defaults to "*", so unless changed, this is the total number of files and sub-directories.)</font></p>
+</blockquote>
+<p><a name="prop007"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Passive'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Passive As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Set to true for FTP to operate in passive mode, otherwise set to false for non-passive (the default).</font></p>
+</blockquote>
+<p><a name="prop008"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Password'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Password As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Password for logging into the FTP server.</font></p>
+</blockquote>
+<p><a name="prop009"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Port'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Port As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Port number. Automatically defaults to the default port for the FTP service.</font></p>
+</blockquote>
+<p><a name="prop010"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Proxy'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Proxy As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">The name of a proxy server when accessing FTP via a proxy .</font></p>
+</blockquote>
+<p><a name="prop011"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='UseIEProxy'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>UseIEProxy As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Set this property to true to use the FTP proxy configured for Internet Explorer.</font></p>
+</blockquote>
+<p><a name="prop012"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Username'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Username As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Username for logging into the FTP server. Defaults to "anonymous".</font></p>
+</blockquote>
+<p><a name="prop013"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Version'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Version As String (read-only)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Version of the component, such as "1.0.0"</font></p>
+</blockquote>
+
+  <p><i><font face="Verdana" size="+2" color="#333333"><b>Methods</b></font></i></p>
+  <p><a name="method000"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='ChangeRemoteDir'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>ChangeRemoteDir(relativeDirPath As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Changes the current remote directory.</font></p>
+</blockquote>
+<p><a name="method001"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Connect'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Connect() As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Connects and logs in to the FTP server using the username/password provided in the component properties.</font></p>
+</blockquote>
+<p><a name="method002"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='CreateRemoteDir'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>CreateRemoteDir(dir As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Creates a directory on the FTP server. Returns true for success, false for failure. If the directory already exists, a new one is not created and false is returned.</font></p>
+</blockquote>
+<p><a name="method003"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='DeleteMatching'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>DeleteMatching(remotePattern As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Deletes all the files in the current remote FTP directory matching the pattern. Returns the number of files deleted, or -1 for failure. The pattern is a string such as "*.txt", where any number of "*" or "?" wildcard characters can be used. "*" matches 0 or more of any character, and "?" matches exactly 1 of any character.</font></p>
+</blockquote>
+<p><a name="method004"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='DeleteRemoteFile'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>DeleteRemoteFile(filename As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Deletes a file on the FTP server.</font></p>
+</blockquote>
+<p><a name="method005"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='Disconnect'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>Disconnect()<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Disconnects from the FTP server, ending the current session.</font></p>
+</blockquote>
+<p><a name="method006"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetCreateTime'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetCreateTime(index As Long) As Date<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the create time for the Nth file or sub-directory in the current remote directory. The first file/dir is at index 0, and the last one is at index (NumFilesAndDirs-1)</font></p>
+</blockquote>
+<p><a name="method007"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetCurrentDirListing'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetCurrentDirListing(pattern As String) As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns (in XML format) the files and directories in the current directory matching the pattern. Passing "*.*" will return all the files and directories.</font></p>
+</blockquote>
+<p><a name="method008"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetCurrentRemoteDir'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetCurrentRemoteDir() As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the current remote directory.</font></p>
+</blockquote>
+<p><a name="method009"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetFile'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetFile(remoteFilename As String, localFilename As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Copies a file from the FTP server to the local filesystem. Returns true for success and false for failure.[</font></p>
+</blockquote>
+<p><a name="method010"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetFilename'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetFilename(index As Long) As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the filename for the Nth file or sub-directory in the current remote directory. The first file/dir is at index 0, and the last one is at index (NumFilesAndDirs-1)</font></p>
+</blockquote>
+<p><a name="method011"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetIsDirectory'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetIsDirectory(index As Long) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns1 for a sub-directory and 0 for a file, for the Nth entry in the current remote directory. The first file/dir is at index 0, and the last one is at index (NumFilesAndDirs-1)</font></p>
+</blockquote>
+<p><a name="method012"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetLastAccessTime'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetLastAccessTime(index As Long) As Date<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the last access time for the Nth file or sub-directory in the current remote directory. The first file/dir is at index 0, and the last one is at index (NumFilesAndDirs-1)</font></p>
+</blockquote>
+<p><a name="method013"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetLastModifiedTime'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetLastModifiedTime(index As Long) As Date<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the last modified time for the Nth file or sub-directory in the current remote directory. The first file/dir is at index 0, and the last one is at index (NumFilesAndDirs-1)</font></p>
+</blockquote>
+<p><a name="method014"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetRemoteFileBinaryData'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetRemoteFileBinaryData(remoteFilename As String) As Variant<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the contents of a remote file. A null is returned on failure.</font></p>
+</blockquote>
+<p><a name="method015"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetRemoteFileTextData'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetRemoteFileTextData(remoteFilename As String) As String<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the contents of a remote file. A null is returned on failure.[</font></p>
+</blockquote>
+<p><a name="method016"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='GetSize'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>GetSize(index As Long) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Returns the size of the Nth remote file in the current directory.</font></p>
+</blockquote>
+<p><a name="method017"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='MGetFiles'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>MGetFiles(remotePattern As String, localDir As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Copies all the files in the current remote FTP directory to a local directory. To copy all the files in a remote directory, set remotePattern to "*.*" The pattern can contain any number of "*" or "?" characters where "*" matches 0 or more of any character, and "?" matches any single character. The return value is the number of files transferred, and on error, a value of -1 is returned. Detailed information about the transfer can be obtained from the XML log.</font></p>
+</blockquote>
+<p><a name="method018"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='MPutFiles'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>MPutFiles(pattern As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Copies all the files matching pattern on the local computer to the current remote FTP directory. The pattern parameter can include directory information, such as "C:/my_dir/*.txt" or it can simply be a pattern such as "*.*" that matches the files in the application's current directory. Subdirectories are not recursed. The return value is the number of files copied, with a value of -1 returned for errors. Detailed information about the transfer can be obtained from the XML log.[</font></p>
+</blockquote>
+<p><a name="method019"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='PutFile'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>PutFile(localFilename As String, remoteFilename As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Copies a local file to the current directory on the FTP server.[</font></p>
+</blockquote>
+<p><a name="method020"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='PutFileFromBinaryData'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>PutFileFromBinaryData(remoteFilename As String, binaryData As Variant) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Creates a file on the remote server containing the data passed in a byte array. Returns true for success, false for failure.</font></p>
+</blockquote>
+<p><a name="method021"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='PutFileFromTextData'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>PutFileFromTextData(remoteFilename As String, textData As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Creates a file on the remote server containing the data passed in a string. Returns true for success, false for failure.[</font></p>
+</blockquote>
+<p><a name="method022"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='RemoveRemoteDir'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>RemoveRemoteDir(dir As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Removes a directory from the FTP server.</font></p>
+</blockquote>
+<p><a name="method023"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='RenameRemoteFile'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>RenameRemoteFile(existingFilename As String, newFilename As String) As Long<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Renames a file on the FTP server.</font></p>
+</blockquote>
+<p><a name="method024"></a><a href="http://www.chilkatsoft.com/RefQuestion.asp?methodName='SaveLastError'&platform='ActiveX'&class='ChilkatFtp'"><font face="Courier New" size="2" color="#333333"><b>SaveLastError(filename As String)<br>
+</b></font></a></p>
+<blockquote>
+<p><font size="2" face="MS Sans Serif">Saves the last error information to an XML formatted file.</font></p>
+</blockquote>
+
+  </td>
+   </tr>
+   </table>
+   </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+    </table>
+    <p align="center"><font size="1" face="MS Sans Serif">Copyright 2000-2006 Chilkat 
+ Software, Inc.</font></p>
+    </td>
+  </tr>
+  </table>
+</div>
+</BODY></HTML>
